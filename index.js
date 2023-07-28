@@ -27,3 +27,18 @@ const strongPassword = (len) => {
 
   return result;
 };
+
+const createAccount = (user, generatePassword) => {
+  return `jmeno: ${user}, heslo:  ${generatePassword(20)}`;
+};
+
+document.body.innerHTML += `<p>${createAccount('Verča', weakPassword)}</p>
+                            <p>${createAccount('Ríša', mediumPassword)}</p>
+                            <p>${createAccount('Sofie', strongPassword)}</p>
+`;
+
+// Napište funkci createAccount, která se bude tvářit, že zakládá nový uživatelský účet.
+// Funkce bude mít dva parametry user a generatePassword.
+// První bude uživatelské jméno a druhý bude funkce, pomocí které se má vygenerovat heslo pro tento účet.
+// Funkce createAccount vrátí řetězec, který bude obsahovat jméno uživatele a heslo vygenerované voláním funkce generatePassword.
+// Funkci generatePassword při volání předejte číslo 9 jako délku hesla.
